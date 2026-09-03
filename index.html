@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRWNWEB — Jasa Pembuatan Website Custom & Professional</title>
+  <meta name="description" content="BRWNWEB melayani jasa pembuatan website landing page, toko online, portofolio, dan aplikasi web custom dengan harga terjangkau mulai dari Rp 500.000.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo-brand">
+        <img src="assets/logo.jpg" alt="BRWNWEB Logo" class="logo-img">
+        <div class="logo-text">BRWN<span>WEB</span></div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#beranda" class="nav-link active">Beranda</a>
+        <a href="#layanan" class="nav-link">Layanan</a>
+        <a href="#portofolio" class="nav-link">Portofolio</a>
+        <a href="#harga" class="nav-link">Estimasi Biaya</a>
+        <a href="#kontak" class="nav-link">Hubungi Kami</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary" onclick="openWaSelector()">
+          <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="beranda">
+    <div class="hero-bg-accent"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="section-tag">
+          <i class="fa-solid fa-code"></i> Website Creation Services
+        </div>
+        <h1>Buat Website Impian Bisnis Anda — <span class="text-gradient">Tampilan Modern & Sesuai Kebutuhan</span></h1>
+        
+        <p>BRWNWEB siap membantu mendesain dan membangun website profesional untuk memperkuat identitas brand, usaha toko online, maupun sistem web custom Anda.</p>
+        
+        <div class="price-pill">
+          <i class="fa-solid fa-tag"></i> Harga Mulai: <span>Rp 500.000</span> (Tergantung Kebutuhan & Kesulitan)
+        </div>
+
+        <div class="hero-btns">
+          <button onclick="openWaSelector()" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Konsultasi WhatsApp Sekarang
+          </button>
+          <a href="#portofolio" class="btn btn-secondary">
+            Lihat Contoh Project <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card-preview">
+        <div class="preview-top-bar">
+          <span class="preview-dot dot-1"></span>
+          <span class="preview-dot dot-2"></span>
+          <span class="preview-dot dot-3"></span>
+        </div>
+        <div class="preview-img-box">
+          <img src="assets/portfolio-company.jpg" alt="Preview BRWNWEB Project">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan Section -->
+  <section class="section-padding" id="layanan">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> Layanan Kami</div>
+        <h2 class="section-title">Solusi Pembuatan Website Sesuai Kebutuhan Anda</h2>
+        <p class="section-subtitle">Kami merancang website yang responsif di smartphone dan laptop, cepat diakses, dan mudah dioperasikan.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Portofolio & Personal Branding</h3>
+          <p>Website khusus untuk memamerkan karya, profil personal, skill, dan pengalaman kerja Anda secara profesional.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Toko Online / E-Commerce</h3>
+          <p>Website jual beli produk lengkap dengan katalog gambar, harga, deskripsi, dan tombol order langsung.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Sistem & Web Application Custom</h3>
+          <p>Sistem berbasis web custom seperti aplikasi nilai siswa, portal data, dashboard admin, atau kasir internal.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Undangan Wedding Digital</h3>
+          <p>Website undangan pernikahan digital modern & interaktif lengkap dengan musik, galeri foto, peta lokasi Google Maps, hitung mundur (countdown), RSVP, dan amplop digital.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-brush"></i></div>
+          <h3>Redesign & Perbaikan Website</h3>
+          <p>Punya website lama yang ingin diperbarui tampilannya agar lebih modern, rapi, dan cepat diakses?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portofolio Showcase (3 Project Asli Klien) -->
+  <section class="section-padding" id="portofolio" style="background: rgba(74, 46, 27, 0.03);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-folder-open"></i> Portofolio Project</div>
+        <h2 class="section-title">Contoh Hasil Pengerjaan Website</h2>
+        <p class="section-subtitle">Berikut adalah beberapa sampel contoh website project yang telah kami buat:</p>
+      </div>
+
+      <div class="portfolio-grid">
+        
+        <!-- Project 1: Portofolio Jevon -->
+        <div class="portfolio-card">
+          <div class="portfolio-img-box">
+            <img src="assets/portfolio-company.jpg" alt="Portofolio Jevon Project">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-tag">Portofolio Personal</div>
+            <h3>Website Portofolio Jevon</h3>
+            <p>Showcase portofolio interaktif dan modern untuk memamerkan karya personal dan keahlian.</p>
+            <a href="https://portofolio-jevon.vercel.app" target="_blank" class="portfolio-url">
+              <i class="fa-solid fa-link"></i> portofolio-jevon.vercel.app
+            </a>
+            <a href="https://portofolio-jevon.vercel.app" target="_blank" class="btn btn-secondary">
+              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: E-Commerce Mora Bakery -->
+        <div class="portfolio-card">
+          <div class="portfolio-img-box">
+            <img src="assets/portfolio-ecommerce.jpg" alt="Mora Cake and Bakery Project">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-tag">E-Commerce & Toko Online</div>
+            <h3>Mora Cake & Bakery</h3>
+            <p>Website toko online toko kue & bakery lengkap dengan katalog menu produk dan tampilan manis.</p>
+            <a href="https://moracakeandbakery.shop/morabakeryrprojek/public/" target="_blank" class="portfolio-url">
+              <i class="fa-solid fa-link"></i> moracakeandbakery.shop/...
+            </a>
+            <a href="https://moracakeandbakery.shop/morabakeryrprojek/public/" target="_blank" class="btn btn-secondary">
+              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Website Nilai Siswa -->
+        <div class="portfolio-card">
+          <div class="portfolio-img-box">
+            <img src="assets/portfolio-landing.jpg" alt="Website Nilai Siswa Project">
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-tag">Web Application Custom</div>
+            <h3>Website Nilai Siswa Project</h3>
+            <p>Sistem web aplikasi pengolahan dan manajemen kalkulasi nilai siswa berbasis online.</p>
+            <a href="https://nilai-siswa-project.vercel.app" target="_blank" class="portfolio-url">
+              <i class="fa-solid fa-link"></i> nilai-siswa-project.vercel.app
+            </a>
+            <a href="https://nilai-siswa-project.vercel.app" target="_blank" class="btn btn-secondary">
+              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Explanation Section -->
+  <section class="section-padding" id="harga">
+    <div class="container">
+      <div class="price-info-box">
+        <div class="price-info-grid">
+          <div class="price-info-content">
+            <h2>Harga Pembuatan Website</h2>
+            <p>Semua pengerjaan website di <strong>BRWNWEB</strong> disesuaikan dengan kebutuhan bisnis Anda. Harga mulai dari <strong>Rp 500.000</strong> dan bergantung pada fitur serta tingkat kesulitan sistem yang diinginkan.</p>
+            
+            <button onclick="openWaSelector()" class="btn btn-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> Tanya Estimasi Harga via WhatsApp
+            </button>
+          </div>
+
+          <div class="features-checklist">
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Desain Custom & Mobile Friendly
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Sudah Termasuk Setup Domain & Hosting
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Integrasi Tombol WhatsApp Direct
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Revisi & Pengerjaan Tepat Waktu
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Konsultasi Gratis Sebelum Pengerjaan
+            </div>
+            <div class="checklist-item">
+              <i class="fa-solid fa-circle-check"></i> Panduan Penggunaan Lengkap
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Team Section -->
+  <section class="section-padding" id="kontak">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-brands fa-whatsapp"></i> Konsultasi Langsung</div>
+        <h2 class="section-title">Semua Tergantung Kebutuhan Anda, Bisa Konsultasi Ke Kami</h2>
+        <p class="section-subtitle">Silakan hubungi salah satu tim kami di bawah ini untuk berdiskusi langsung mengenai konsep website yang ingin Anda buat:</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Contact 1: Amoz -->
+        <div class="contact-card">
+          <div class="contact-avatar">AM</div>
+          <h3 class="contact-name">Amoz</h3>
+          <p class="contact-role">Tim Konsultasi BRWNWEB</p>
+          <div class="contact-number">+62 813-1609-8209</div>
+          <div class="contact-actions">
+            <a href="https://wa.me/6281316098209?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button class="btn btn-secondary btn-copy" onclick="copyNumber('+6281316098209', this)">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact 2: Tamara -->
+        <div class="contact-card">
+          <div class="contact-avatar">TM</div>
+          <h3 class="contact-name">Tamara</h3>
+          <p class="contact-role">Tim Konsultasi BRWNWEB</p>
+          <div class="contact-number">+62 857-8222-8570</div>
+          <div class="contact-actions">
+            <a href="https://wa.me/6285782228570?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button class="btn btn-secondary btn-copy" onclick="copyNumber('+6285782228570', this)">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact 3: Jevon -->
+        <div class="contact-card">
+          <div class="contact-avatar">JV</div>
+          <h3 class="contact-name">Jevon</h3>
+          <p class="contact-role">Tim Konsultasi BRWNWEB</p>
+          <div class="contact-number">0812-8532-4814</div>
+          <div class="contact-actions">
+            <a href="https://wa.me/6281285324814?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button class="btn btn-secondary btn-copy" onclick="copyNumber('081285324814', this)">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-flex">
+        <a href="#" class="logo-brand">
+          <img src="assets/logo.jpg" alt="BRWNWEB Logo" class="logo-img">
+          <div class="logo-text">BRWN<span>WEB</span></div>
+        </a>
+        <p style="color: var(--text-light-muted);">Jasa Pembuatan Website Custom, Portofolio & Toko Online</p>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 BRWNWEB (Website Creation Services). All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Widget -->
+  <button class="floating-wa-btn" onclick="toggleWaDropdown()" title="Konsultasi WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Konsultasi WA</span>
+  </button>
+
+  <!-- WhatsApp Team Choice Dropdown -->
+  <div class="wa-dropdown-menu" id="waDropdownMenu">
+    <div class="wa-dropdown-header">
+      <i class="fa-brands fa-whatsapp"></i> Pilih Tim Konsultasi:
+    </div>
+    <a href="https://wa.me/6281316098209?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
+      <i class="fa-solid fa-user"></i> <strong>Amoz</strong> (+62 813-1609-8209)
+    </a>
+    <a href="https://wa.me/6285782228570?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
+      <i class="fa-solid fa-user"></i> <strong>Tamara</strong> (+62 857-8222-8570)
+    </a>
+    <a href="https://wa.me/6281285324814?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
+      <i class="fa-solid fa-user"></i> <strong>Jevon</strong> (0812-8532-4814)
+    </a>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
