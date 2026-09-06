@@ -99,3 +99,106 @@ function fallbackCopy(number, btnElement) {
   document.body.removeChild(tempInput);
   showCopiedFeedback(btnElement);
 }
+
+// Open & Scroll to Spec Explanation Card
+window.openSpecModal = function(type) {
+  let targetId = 'exp-domain';
+  if (type === 'hosting') targetId = 'exp-hosting';
+  else if (type === 'email') targetId = 'exp-email';
+  else if (type === 'ssl') targetId = 'exp-ssl';
+  else if (type === 'seo') targetId = 'exp-seo';
+  else if (type === 'image' || type === 'setup') targetId = 'exp-image';
+  
+  const targetElement = document.getElementById(targetId) || document.getElementById('penjelasan-fitur');
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    targetElement.style.transition = 'all 0.5s ease';
+    targetElement.style.borderColor = 'var(--accent-amber)';
+    targetElement.style.boxShadow = '0 0 25px rgba(217, 119, 36, 0.4)';
+    
+    setTimeout(() => {
+      targetElement.style.borderColor = '';
+      targetElement.style.boxShadow = '';
+    }, 2500);
+  }
+};
+
+// FAQ Accordion Toggle
+window.toggleFaq = function(buttonElement) {
+  const faqItem = buttonElement.closest('.faq-item');
+  if (!faqItem) return;
+
+  const isActive = faqItem.classList.contains('active');
+
+  // Close all other active FAQ items
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+  });
+
+  // Toggle clicked item
+  if (!isActive) {
+    faqItem.classList.add('active');
+  }
+};
+
+// Interactive Price Calculator Logic
+window.calculatePrice = function() {
+  const calcType = document.getElementById('calcType');
+  const calcPages = document.getElementById('calcPages');
+  const featureWa = document.getElementById('featureWa');
+  const featureMultiLang = document.getElementById('featureMultiLang');
+  const featureSpeed = document.getElementById('featureSpeed');
+  const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+
+  if (!calcType || !totalPriceDisplay) return;
+
+  let total = parseInt(calcType.value) || 588000;
+  
+  const pagesCount = Math.max(0, parseInt(calcPages.value) || 0);
+  total += pagesCount * 50000;
+
+  if (featureWa && featureWa.checked) total += parseInt(featureWa.value);
+  if (featureMultiLang && featureMultiLang.checked) total += parseInt(featureMultiLang.value);
+  if (featureSpeed && featureSpeed.checked) total += parseInt(featureSpeed.value);
+
+  totalPriceDisplay.textContent = 'IDR ' + total.toLocaleString('id-ID');
+};
+
+// Send Calculator Result to WhatsApp
+window.sendCalcToWa = function() {
+  const calcType = document.getElementById('calcType');
+  const calcPages = document.getElementById('calcPages');
+  const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+  
+  const selectedType = calcType.options[calcType.selectedIndex].text;
+  const extraPages = calcPages.value || 0;
+  const total = totalPriceDisplay.textContent;
+
+  const msg = `Halo BRWNWEB, saya berminat membuat website dengan rincian kalkulasi berikut:\n\n` +
+              `• Jenis Paket: ${selectedType}\n` +
+              `• Halaman Tambahan: ${extraPages} Halaman\n` +
+              `• Estimasi Total Biaya: ${total}\n\n` +
+              `Mohon bantuan konsultasi pengerjaannya, terima kasih!`;
+
+  const waUrl = `https://wa.me/6281316098209?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
+};
+
+// Back to Top Scroll & Button Visibility
+window.scrollToTop = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTopBtn');
+  if (btn) {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+});
+
+
+
