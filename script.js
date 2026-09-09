@@ -200,5 +200,135 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Portfolio Filter Category Logic
+window.filterPortfolio = function(category, btnElement) {
+  const cards = document.querySelectorAll('.portfolio-card');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  filterBtns.forEach(btn => btn.classList.remove('active'));
+  if (btnElement) btnElement.classList.add('active');
+
+  cards.forEach(card => {
+    const cardCat = card.getAttribute('data-category');
+    if (category === 'all' || cardCat === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+};
+
+// Live Demo Modal Handler
+window.openDemoModal = function(title, category, imgSrc, desc, liveUrl) {
+  const modal = document.getElementById('demoModal');
+  if (!modal) return;
+
+  const modalTitle = document.getElementById('modalTitle');
+  const modalTag = document.getElementById('modalTag');
+  const modalImg = document.getElementById('modalImg');
+  const modalDesc = document.getElementById('modalDesc');
+
+  if (modalTitle) modalTitle.textContent = title;
+  if (modalTag) modalTag.textContent = category;
+  if (modalImg) modalImg.src = imgSrc;
+  if (modalDesc) modalDesc.textContent = desc;
+
+  const liveBtn = document.getElementById('modalLiveBtn');
+  if (liveBtn) liveBtn.href = liveUrl || '#';
+
+  const waBtn = document.getElementById('modalWaBtn');
+  if (waBtn) {
+    const msg = `Halo BRWNWEB, saya tertarik ingin memesan model website seperti "${title}" (${category}). Mohon konsultasi pengerjaannya!`;
+    waBtn.href = `https://wa.me/6281316098209?text=${encodeURIComponent(msg)}`;
+  }
+
+  modal.classList.add('active');
+};
+
+window.closeDemoModal = function() {
+  const modal = document.getElementById('demoModal');
+  if (modal) modal.classList.remove('active');
+};
+
+// Close Demo Modal on clicking overlay background
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('demoModal');
+  if (modal && e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Lead Contact Form Submit Handler
+window.handleFormSubmit = function(e) {
+  e.preventDefault();
+  const name = document.getElementById('formName').value;
+  const phone = document.getElementById('formPhone').value;
+  const pkg = document.getElementById('formPackage').value;
+  const msg = document.getElementById('formMessage').value;
+
+  const waMsg = `Halo BRWNWEB, saya ingin berkonsultasi mengenai pembuatan website dengan detail berikut:\n\n` +
+                `• Nama: ${name}\n` +
+                `• No. WA: ${phone}\n` +
+                `• Paket Diminati: ${pkg}\n` +
+                (msg ? `• Catatan: ${msg}\n\n` : `\n`) +
+                `Mohon bantuan informasi pengerjaannya. Terima kasih!`;
+
+  const waUrl = `https://wa.me/6281316098209?text=${encodeURIComponent(waMsg)}`;
+  window.open(waUrl, '_blank');
+};
+
+// Social Proof Recent Order Alert Toast
+const recentOrdersData = [
+  { name: "Bpk. Hendra", city: "Surabaya", pkg: "Paket Business", time: "12 menit lalu" },
+  { name: "Ibu Ratna", city: "Bandung", pkg: "Undangan Digital (Rp 100rb)", time: "5 menit lalu" },
+  { name: "Sdr. Kevin", city: "Jakarta", pkg: "Paket Portofolio (Rp 500rb)", time: "18 menit lalu" },
+  { name: "PT Caste Lube Indo", city: "Tangerang", pkg: "Paket Enterprise", time: "30 menit lalu" },
+  { name: "Bpk. Rian", city: "Semarang", pkg: "Paket Starter", time: "45 menit lalu" }
+];
+
+function initRecentOrderToast() {
+  const toast = document.getElementById('recentOrderToast');
+  if (!toast) return;
+
+  let currentIndex = 0;
+
+  setTimeout(() => {
+    showNextToast();
+  }, 3500);
+
+  setInterval(() => {
+    showNextToast();
+  }, 24000);
+
+  function showNextToast() {
+    const data = recentOrdersData[currentIndex];
+    const toastDesc = document.getElementById('toastDesc');
+    const toastTime = document.getElementById('toastTime');
+
+    if (toastDesc && toastTime) {
+      toastDesc.innerHTML = `${data.name} (${data.city}) baru saja memesan <strong>${data.pkg}</strong>`;
+      toastTime.textContent = data.time;
+    }
+
+    toast.classList.add('active');
+
+    setTimeout(() => {
+      toast.classList.remove('active');
+    }, 6000);
+
+    currentIndex = (currentIndex + 1) % recentOrdersData.length;
+  }
+}
+
+window.closeToast = function() {
+  const toast = document.getElementById('recentOrderToast');
+  if (toast) toast.classList.remove('active');
+};
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initRecentOrderToast();
+});
+
 
 

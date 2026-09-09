@@ -6,6 +6,64 @@
   <title>BRWNWEB — Jasa Pembuatan Website Custom & Professional</title>
   <meta name="description" content="BRWNWEB melayani jasa pembuatan website undangan digital, portofolio, landing page, toko online, dan aplikasi web custom dengan harga terjangkau mulai dari Rp 100.000.">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="apple-touch-icon" href="assets/logo.jpg">
+
+  <!-- Open Graph Meta Tags for Social Media & WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BRWNWEB — Jasa Pembuatan Website Custom & Professional">
+  <meta property="og:description" content="Jasa pembuatan website profesional, undangan digital (100rb), portofolio (500rb), landing page, & web custom. Free server 1 tahun, responsif & garansi 99.9% uptime.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <meta property="og:site_name" content="BRWNWEB">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BRWNWEB — Jasa Pembuatan Website Custom & Professional">
+  <meta name="twitter:description" content="Jasa pembuatan website profesional, undangan digital, portofolio, landing page, & web custom. Mulai dari Rp 100.000.">
+  <meta name="twitter:image" content="assets/logo.jpg">
+
+  <!-- Structured Data JSON-LD for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "BRWNWEB",
+    "image": "assets/logo.jpg",
+    "description": "Jasa Pembuatan Website Custom & Professional. Melayani Undangan Digital, Portofolio, Company Profile, Toko Online, dan Sistem Web Custom.",
+    "priceRange": "Rp 100.000 - Rp 15.000.000",
+    "telephone": "+6281316098209",
+    "areaServed": "ID",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Undangan Digital",
+        "price": "100000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Portofolio Personal",
+        "price": "500000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Paket Starter UMKM",
+        "price": "3000000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Paket Business Company Profile",
+        "price": "5000000",
+        "priceCurrency": "IDR"
+      }
+    ]
+  }
+  </script>
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Stylesheets -->
@@ -170,12 +228,22 @@
         <p class="section-subtitle">Berikut adalah deretan website live project yang telah dibuat, lengkap dengan detail identitas logo & kebutuhan sistem masing-masing brand:</p>
       </div>
 
-      <div class="portfolio-grid">
+      <!-- Portfolio Filter Buttons -->
+      <div class="portfolio-filter-bar">
+        <button class="filter-btn active" onclick="filterPortfolio('all', this)"><i class="fa-solid fa-border-all"></i> Semua</button>
+        <button class="filter-btn" onclick="filterPortfolio('company', this)"><i class="fa-solid fa-building"></i> Company Profile</button>
+        <button class="filter-btn" onclick="filterPortfolio('undangan', this)"><i class="fa-solid fa-heart"></i> Undangan Digital</button>
+        <button class="filter-btn" onclick="filterPortfolio('portofolio', this)"><i class="fa-solid fa-user-tie"></i> Portofolio Personal</button>
+        <button class="filter-btn" onclick="filterPortfolio('ecommerce', this)"><i class="fa-solid fa-store"></i> Toko Online</button>
+        <button class="filter-btn" onclick="filterPortfolio('custom', this)"><i class="fa-solid fa-code"></i> Web Custom</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid">
         
         <!-- Project 1: Kemenangan Signature -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="ecommerce">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-kemenangan.jpg" alt="Kemenangan Signature Project">
+            <img src="assets/portfolio-kemenangan.jpg" alt="Kemenangan Signature Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-crown"></i> Crown & Gold Emblem
             </div>
@@ -187,19 +255,21 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Mahkota emas & simbol Signature melambangkan kualitas tinggi dan kepercayaan.
             </div>
-            <a href="https://kemenangansignature.com/" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> kemenangansignature.com
-            </a>
-            <a href="https://kemenangansignature.com/" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://kemenangansignature.com/" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Kemenangan Signature', 'E-Commerce & Toko Emas', 'assets/portfolio-kemenangan.jpg', 'Website toko emas terpercaya & perhiasan berlian eksklusif dengan katalog produk luxury dan tampilan premium.', 'https://kemenangansignature.com/')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 2: Jakarta Signature -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="ecommerce">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-jakarta-signature.jpg" alt="Jakarta Signature Project">
+            <img src="assets/portfolio-jakarta-signature.jpg" alt="Jakarta Signature Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-gem"></i> JS Emerald Monogram
             </div>
@@ -211,19 +281,21 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Monogram JS elegan berlatar warna hijau emerald & aksen emas mewah.
             </div>
-            <a href="https://www.jakartasignature.com/" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> www.jakartasignature.com
-            </a>
-            <a href="https://www.jakartasignature.com/" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://www.jakartasignature.com/" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Jakarta Signature', 'Gold & Jewellery Platform', 'assets/portfolio-jakarta-signature.jpg', 'Platform brand perhiasan emas sejak 2020 lengkap dengan update harga emas harian & katalog koleksi wedding ring.', 'https://www.jakartasignature.com/')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 3: Signature Gold Jewellery -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="ecommerce">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-signature-gold.jpg" alt="Signature Gold Jewellery Project">
+            <img src="assets/portfolio-signature-gold.jpg" alt="Signature Gold Jewellery Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-ring"></i> Signature Gold Serif Badge
             </div>
@@ -235,19 +307,21 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Tipografi Serif emas minimalis yang mencerminkan keanggunan gaya terkini.
             </div>
-            <a href="https://signaturegoldjewellery.com/" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> signaturegoldjewellery.com
-            </a>
-            <a href="https://signaturegoldjewellery.com/" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://signaturegoldjewellery.com/" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Signature Gold Jewellery', 'Katalog Perhiasan Eksklusif', 'assets/portfolio-signature-gold.jpg', 'Website resmi showcase perhiasan emas dan berlian eksklusif dengan desain minimalis modern.', 'https://signaturegoldjewellery.com/')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 4: Castelubeindo -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="company">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-castelubeindo.jpg" alt="Castelubeindo Project">
+            <img src="assets/portfolio-castelubeindo.jpg" alt="Castelubeindo Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-oil-can"></i> Industry Caste Shield Logo
             </div>
@@ -259,43 +333,47 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Perisai biru & tetesan pelumas industri yang melambangkan perlindungan & kekuatan mesin.
             </div>
-            <a href="https://castelubeindo.com/" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> castelubeindo.com
-            </a>
-            <a href="https://castelubeindo.com/" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://castelubeindo.com/" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Castelubeindo', 'Company Profile & Pelumas Industri', 'assets/portfolio-castelubeindo.jpg', 'Website resmi profil perusahaan manufaktur dan distributor oli pelumas industri berkualitas tinggi.', 'https://castelubeindo.com/')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 5: Portofolio Jevon -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="portofolio">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-company.jpg" alt="Portofolio Jevon Project">
+            <img src="assets/portfolio-company.jpg" alt="Portofolio Jevon Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-user-astronaut"></i> Jevon Personal Emblem
             </div>
           </div>
           <div class="portfolio-content">
-            <div class="portfolio-tag">Portofolio Personal</div>
+            <div class="portfolio-tag">Portofolio Personal (Rp 500rb)</div>
             <h3>Website Portofolio Jevon</h3>
             <p>Showcase portofolio interaktif dan modern untuk memamerkan karya personal dan keahlian.</p>
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Monogram JV modern dengan gaya cyber tech.
             </div>
-            <a href="https://portofolio-jevon.vercel.app" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> portofolio-jevon.vercel.app
-            </a>
-            <a href="https://portofolio-jevon.vercel.app" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://portofolio-jevon.vercel.app" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Website Portofolio Jevon', 'Portofolio Personal', 'assets/portfolio-company.jpg', 'Showcase portofolio interaktif dan modern untuk memamerkan karya personal dan keahlian.', 'https://portofolio-jevon.vercel.app')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 6: E-Commerce Mora Bakery -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="ecommerce">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-ecommerce.jpg" alt="Mora Cake and Bakery Project">
+            <img src="assets/portfolio-ecommerce.jpg" alt="Mora Cake and Bakery Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-cookie-bite"></i> Mora Sweet Bakery Logo
             </div>
@@ -307,19 +385,21 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Lambang koki bakery dengan warna pastel hangat.
             </div>
-            <a href="https://moracakeandbakery.shop/morabakeryrprojek/public/" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> moracakeandbakery.shop/...
-            </a>
-            <a href="https://moracakeandbakery.shop/morabakeryrprojek/public/" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://moracakeandbakery.shop/morabakeryrprojek/public/" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Mora Cake & Bakery', 'E-Commerce & Toko Online', 'assets/portfolio-ecommerce.jpg', 'Website toko online toko kue & bakery lengkap dengan katalog menu produk.', 'https://moracakeandbakery.shop/morabakeryrprojek/public/')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Project 7: Website Nilai Siswa -->
-        <div class="portfolio-card">
+        <div class="portfolio-card" data-category="custom">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-landing.jpg" alt="Website Nilai Siswa Project">
+            <img src="assets/portfolio-landing.jpg" alt="Website Nilai Siswa Project" loading="lazy">
             <div class="portfolio-logo-badge">
               <i class="fa-solid fa-graduation-cap"></i> Edu System Emblem
             </div>
@@ -331,15 +411,98 @@
             <div class="logo-detail-info">
               <i class="fa-solid fa-circle-info"></i> <strong>Detail Logo:</strong> Ikon topi akademis & chart kalkulasi otomatis.
             </div>
-            <a href="https://nilai-siswa-project.vercel.app" target="_blank" class="portfolio-url">
-              <i class="fa-solid fa-link"></i> nilai-siswa-project.vercel.app
-            </a>
-            <a href="https://nilai-siswa-project.vercel.app" target="_blank" class="btn btn-secondary">
-              Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <div class="portfolio-actions">
+              <a href="https://nilai-siswa-project.vercel.app" target="_blank" class="btn btn-secondary">
+                Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Website Nilai Siswa Project', 'Web Application Custom', 'assets/portfolio-landing.jpg', 'Sistem web aplikasi pengolahan dan manajemen kalkulasi nilai siswa berbasis online.', 'https://nilai-siswa-project.vercel.app')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
           </div>
         </div>
 
+        <!-- Project 8: Undangan Wedding Digital Sample -->
+        <div class="portfolio-card" data-category="undangan">
+          <div class="portfolio-img-box">
+            <img src="assets/portfolio-landing.jpg" alt="Undangan Wedding Digital Sample" loading="lazy">
+            <div class="portfolio-logo-badge" style="background: rgba(194, 24, 91, 0.85);">
+              <i class="fa-solid fa-heart"></i> Wedding & Event Badge
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-tag" style="background: #FCE4EC; color: #C2185B;">Undangan Digital (Rp 100rb)</div>
+            <h3>Undangan Wedding Digital Modern</h3>
+            <p>Website undangan pernikahan digital interaktif dengan audio musik backsound, galeri foto, peta Google Maps, RSVP, dan amplop digital.</p>
+            <div class="logo-detail-info">
+              <i class="fa-solid fa-circle-info"></i> <strong>Fitur Utama:</strong> Musik audio, RSVP otomatis, maps lokasi, & transfer amplop online.
+            </div>
+            <div class="portfolio-actions">
+              <a href="https://wa.me/6281316098209?text=Halo%20BRWNWEB,%20saya%20mau%20pesan%20Undangan%20Digital%20Rp%20100rb" target="_blank" class="btn btn-secondary" style="border-color: #C2185B; color: #C2185B;">
+                Pesan Rp 100rb <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Undangan Wedding Digital Modern', 'Undangan Digital (Rp 100.000)', 'assets/portfolio-landing.jpg', 'Website undangan pernikahan digital interaktif dengan audio musik backsound, galeri foto, peta Google Maps, RSVP, dan amplop digital.', 'https://wa.me/6281316098209?text=Halo%20BRWNWEB,%20saya%20mau%20pesan%20Undangan%20Digital%20Rp%20100rb')">
+                <i class="fa-solid fa-eye"></i> Quick Preview
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni & Ulasan Klien -->
+  <section class="section-padding" id="testimoni" style="background: var(--bg-card); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag"><i class="fa-solid fa-star" style="color: var(--accent-amber);"></i> Testimoni Klien</div>
+        <h2 class="section-title">Apa Kata Klien Tentang Layanan BRWNWEB?</h2>
+        <p class="section-subtitle">Kepercayaan dan kepuasan pelanggan adalah prioritas utama kami dalam setiap pengerjaan website:</p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Pengerjaan sangat cepat! Website Kemenangan Signature tampil super elegan & mewah. Support tim BRWNWEB juga sangat responsif membantu pengelolaan."</p>
+          <div class="testimonial-user">
+            <div class="user-avatar" style="background: var(--primary-brown);">KS</div>
+            <div class="user-info">
+              <h4>Kemenangan Signature</h4>
+              <span>Pemilik Brand Toko Emas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Website Undangan Digital nikahan saya Rp 100rb hasilnya bagus sekali! Musik lancar, peta lokasi akurat, dan fitur amplop digitalnya sangat praktis."</p>
+          <div class="testimonial-user">
+            <div class="user-avatar" style="background: #C2185B;">RN</div>
+            <div class="user-info">
+              <h4>Rian & Nisa</h4>
+              <span>Klien Undangan Digital</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Paket Portofolio 500rb pas banget buat mahasiswa & freelancer. Tampilan karya saya jadi profesional dan langsung gampang dibagikan ke klien!"</p>
+          <div class="testimonial-user">
+            <div class="user-avatar" style="background: #00838F;">AL</div>
+            <div class="user-info">
+              <h4>Aldi Lesmana</h4>
+              <span>Freelance Graphic Designer</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1016,6 +1179,45 @@
         </div>
 
       </div>
+
+      <!-- Interactive Lead Capture Form -->
+      <div class="contact-form-box">
+        <div class="form-header text-center">
+          <h3><i class="fa-solid fa-paper-plane"></i> Kirim Pesan & Permintaan Penawaran</h3>
+          <p>Isi formulir di bawah ini untuk terhubung langsung dengan tim konsultan BRWNWEB via WhatsApp:</p>
+        </div>
+        <form id="leadContactForm" onsubmit="handleFormSubmit(event)" class="contact-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="formName">Nama Lengkap *</label>
+              <input type="text" id="formName" placeholder="Contoh: Budi Santoso" required class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="formPhone">Nomor WhatsApp *</label>
+              <input type="tel" id="formPhone" placeholder="Contoh: 081234567890" required class="form-input">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="formPackage">Pilih Paket Website yang Diminati *</label>
+            <select id="formPackage" class="form-select">
+              <option value="Undangan Digital (Rp 100.000)">Undangan Digital — Rp 100.000 / paket</option>
+              <option value="Portofolio Personal (Rp 500.000)">Portofolio Personal — Rp 500.000 / paket</option>
+              <option value="Paket Starter (Rp 3.000.000)">Paket Starter — Rp 3.000.000 / tahun</option>
+              <option value="Paket Business (Rp 5.000.000)" selected>Paket Business — Rp 5.000.000 / tahun ⭐</option>
+              <option value="Paket Professional (Rp 10.000.000)">Paket Professional — Rp 10.000.000 / tahun</option>
+              <option value="Paket Enterprise (Rp 15.000.000)">Paket Enterprise — Rp 15.000.000 / tahun</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="formMessage">Pesan / Catatan Kebutuhan Website (Opsional)</label>
+            <textarea id="formMessage" rows="3" placeholder="Tuliskan konsep website atau pertanyaan Anda..." class="form-textarea"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit-form">
+            Kirim Konsultasi ke WhatsApp <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </form>
+      </div>
+
     </div>
   </section>
 
@@ -1061,6 +1263,42 @@
     <a href="https://wa.me/6281285324814?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
       <i class="fa-solid fa-user"></i> <strong>Jevon</strong> (0812-8532-4814)
     </a>
+  </div>
+
+  <!-- Live Demo Preview Modal -->
+  <div class="demo-modal-overlay" id="demoModal">
+    <div class="demo-modal-container">
+      <button class="demo-modal-close" onclick="closeDemoModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="demo-modal-header">
+        <span class="demo-modal-tag" id="modalTag">Category</span>
+        <h3 id="modalTitle">Project Title</h3>
+      </div>
+      <div class="demo-modal-body">
+        <div class="demo-preview-frame">
+          <img id="modalImg" src="" alt="Live Demo Preview">
+        </div>
+        <p id="modalDesc">Project description</p>
+      </div>
+      <div class="demo-modal-footer">
+        <a href="#" id="modalLiveBtn" target="_blank" class="btn btn-primary">
+          Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="https://wa.me/6281316098209?text=Halo%20BRWNWEB,%20saya%20tertarik%20dengan%20model%20website%20seperti%20ini" id="modalWaBtn" target="_blank" class="btn btn-secondary" style="border-color: #25D366; color: #25D366;">
+          Pesan Model Seperti Ini <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Proof Toast (Recent Order Alert) -->
+  <div class="recent-order-toast" id="recentOrderToast">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-content">
+      <div class="toast-title">Pemesanan Terbaru 🚀</div>
+      <div class="toast-desc" id="toastDesc">Bpk. Rizky (Jakarta) baru saja memesan <strong>Paket Business</strong></div>
+      <span class="toast-time" id="toastTime">10 menit yang lalu</span>
+    </div>
+    <button class="toast-close" onclick="closeToast()"><i class="fa-solid fa-xmark"></i></button>
   </div>
 
   <!-- JavaScript -->
