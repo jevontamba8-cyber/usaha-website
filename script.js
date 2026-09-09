@@ -152,10 +152,10 @@ window.calculatePrice = function() {
 
   if (!calcType || !totalPriceDisplay) return;
 
-  let total = parseInt(calcType.value) || 588000;
+  let total = parseInt(calcType.value) || 3000000;
   
   const pagesCount = Math.max(0, parseInt(calcPages.value) || 0);
-  total += pagesCount * 50000;
+  total += pagesCount * 100000;
 
   if (featureWa && featureWa.checked) total += parseInt(featureWa.value);
   if (featureMultiLang && featureMultiLang.checked) total += parseInt(featureMultiLang.value);
