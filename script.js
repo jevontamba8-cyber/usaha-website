@@ -180,7 +180,7 @@ window.sendCalcToWa = function() {
               `• Estimasi Total Biaya: ${total}\n\n` +
               `Mohon bantuan konsultasi pengerjaannya, terima kasih!`;
 
-  const waUrl = `https://wa.me/6281316098209?text=${encodeURIComponent(msg)}`;
+  const waUrl = `https://wa.me/6281285324814?text=${encodeURIComponent(msg)}`;
   window.open(waUrl, '_blank');
 };
 
@@ -239,7 +239,7 @@ window.openDemoModal = function(title, category, imgSrc, desc, liveUrl) {
   const waBtn = document.getElementById('modalWaBtn');
   if (waBtn) {
     const msg = `Halo BRWNWEB, saya tertarik ingin memesan model website seperti "${title}" (${category}). Mohon konsultasi pengerjaannya!`;
-    waBtn.href = `https://wa.me/6281316098209?text=${encodeURIComponent(msg)}`;
+    waBtn.href = `https://wa.me/6281285324814?text=${encodeURIComponent(msg)}`;
   }
 
   modal.classList.add('active');
@@ -273,7 +273,7 @@ window.handleFormSubmit = function(e) {
                 (msg ? `• Catatan: ${msg}\n\n` : `\n`) +
                 `Mohon bantuan informasi pengerjaannya. Terima kasih!`;
 
-  const waUrl = `https://wa.me/6281316098209?text=${encodeURIComponent(waMsg)}`;
+  const waUrl = `https://wa.me/6281285324814?text=${encodeURIComponent(waMsg)}`;
   window.open(waUrl, '_blank');
 };
 
