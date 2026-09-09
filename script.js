@@ -149,10 +149,29 @@ window.calculatePrice = function() {
   const featureMultiLang = document.getElementById('featureMultiLang');
   const featureSpeed = document.getElementById('featureSpeed');
   const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+  const includedPagesHint = document.getElementById('includedPagesHint');
 
   if (!calcType || !totalPriceDisplay) return;
 
-  let total = parseInt(calcType.value) || 3000000;
+  const val = parseInt(calcType.value) || 3000000;
+  let total = val;
+
+  // Update dynamic hint for included pages count
+  if (includedPagesHint) {
+    if (val === 100000) {
+      includedPagesHint.textContent = "Paket Undangan Digital sudah mencakup 1 Halaman bawaan.";
+    } else if (val === 500000) {
+      includedPagesHint.textContent = "Paket Portofolio sudah mencakup 3 Halaman bawaan.";
+    } else if (val === 3000000) {
+      includedPagesHint.textContent = "Paket Starter sudah mencakup 5 Halaman bawaan.";
+    } else if (val === 5000000) {
+      includedPagesHint.textContent = "Paket Business sudah mencakup 10 Halaman bawaan.";
+    } else if (val === 10000000) {
+      includedPagesHint.textContent = "Paket Professional sudah mencakup 20 Halaman bawaan.";
+    } else if (val === 15000000) {
+      includedPagesHint.textContent = "Paket Enterprise sudah mencakup Unlimited Halaman bawaan.";
+    }
+  }
   
   const pagesCount = Math.max(0, parseInt(calcPages.value) || 0);
   total += pagesCount * 100000;
