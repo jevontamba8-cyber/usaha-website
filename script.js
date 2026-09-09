@@ -277,58 +277,5 @@ window.handleFormSubmit = function(e) {
   window.open(waUrl, '_blank');
 };
 
-// Social Proof Recent Order Alert Toast
-const recentOrdersData = [
-  { name: "Bpk. Hendra", city: "Surabaya", pkg: "Paket Business", time: "12 menit lalu" },
-  { name: "Ibu Ratna", city: "Bandung", pkg: "Undangan Digital (Rp 100rb)", time: "5 menit lalu" },
-  { name: "Sdr. Kevin", city: "Jakarta", pkg: "Paket Portofolio (Rp 500rb)", time: "18 menit lalu" },
-  { name: "PT Caste Lube Indo", city: "Tangerang", pkg: "Paket Enterprise", time: "30 menit lalu" },
-  { name: "Bpk. Rian", city: "Semarang", pkg: "Paket Starter", time: "45 menit lalu" }
-];
-
-function initRecentOrderToast() {
-  const toast = document.getElementById('recentOrderToast');
-  if (!toast) return;
-
-  let currentIndex = 0;
-
-  setTimeout(() => {
-    showNextToast();
-  }, 3500);
-
-  setInterval(() => {
-    showNextToast();
-  }, 24000);
-
-  function showNextToast() {
-    const data = recentOrdersData[currentIndex];
-    const toastDesc = document.getElementById('toastDesc');
-    const toastTime = document.getElementById('toastTime');
-
-    if (toastDesc && toastTime) {
-      toastDesc.innerHTML = `${data.name} (${data.city}) baru saja memesan <strong>${data.pkg}</strong>`;
-      toastTime.textContent = data.time;
-    }
-
-    toast.classList.add('active');
-
-    setTimeout(() => {
-      toast.classList.remove('active');
-    }, 6000);
-
-    currentIndex = (currentIndex + 1) % recentOrdersData.length;
-  }
-}
-
-window.closeToast = function() {
-  const toast = document.getElementById('recentOrderToast');
-  if (toast) toast.classList.remove('active');
-};
-
-// Initialize on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  initRecentOrderToast();
-});
-
 
 
