@@ -883,6 +883,101 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     gap: 12px;
   }
+
+  /* Portfolio Filter Bar Mobile */
+  .portfolio-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 6px 4px 12px 4px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .portfolio-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Pricing Cards Mobile */
+  .pricing-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .price-card {
+    padding: 22px 18px;
+  }
+  .price-card-title {
+    font-size: 1.28rem;
+  }
+  .price-card-price {
+    font-size: 1.45rem;
+  }
+  .price-card-caption {
+    min-height: auto;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+
+  /* Comparison Table Mobile */
+  .pricing-table-card {
+    padding: 16px 12px;
+    margin-top: 24px;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+  .pricing-table .col-spec {
+    min-width: 135px;
+  }
+  .pricing-table .col-tier {
+    min-width: 120px;
+  }
+
+  /* Live Demo Modal Mobile */
+  .demo-modal-container {
+    padding: 20px 16px;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+  .demo-modal-header h3 {
+    font-size: 1.15rem;
+  }
+  .demo-preview-frame {
+    max-height: 200px;
+  }
+  .demo-modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .demo-modal-footer .btn {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  /* Contact Lead Form Mobile */
+  .contact-form-box {
+    padding: 22px 16px;
+    margin-top: 28px;
+  }
+  .form-header h3 {
+    font-size: 1.18rem;
+  }
+  .form-header p {
+    font-size: 0.84rem;
+    margin-bottom: 18px;
+  }
+  .form-input, .form-select, .form-textarea {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -900,12 +995,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-content h1 {
-    font-size: 1.85rem;
+    font-size: 1.8rem;
   }
 
   .btn {
-    padding: 12px 20px;
-    font-size: 0.9rem;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+  }
+
+  .price-card {
+    padding: 18px 14px;
   }
 }
 
