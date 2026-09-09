@@ -998,6 +998,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 12px;
 }
 
+.badge-undangan { background: #FCE4EC; color: #C2185B; border: 1px solid #F8BBD0; }
+.badge-portofolio { background: #E0F2F1; color: #00695C; border: 1px solid #80CBC4; }
 .badge-starter { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
 .badge-business { background: #E3F2FD; color: #1565C0; border: 1px solid #90CAF9; }
 .badge-professional { background: #F3E5F5; color: #7B1FA2; border: 1px solid #CE93D8; }
