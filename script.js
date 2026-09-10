@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initScrollReveal();
+  initCounters();
 });
 
 // Navbar Scroll & Mobile Drawer
@@ -295,6 +297,75 @@ window.handleFormSubmit = function(e) {
   const waUrl = `https://wa.me/6281285324814?text=${encodeURIComponent(waMsg)}`;
   window.open(waUrl, '_blank');
 };
+
+// Scroll Reveal Intersection Observer
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+// Stats Animated Number Counter
+function initCounters() {
+  const counterElements = document.querySelectorAll('.counter');
+  const counterDecimals = document.querySelectorAll('.counter-decimal');
+  const statsSection = document.querySelector('.stats-section');
+  
+  if (!statsSection) return;
+
+  let animated = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animated) {
+        animated = true;
+
+        counterElements.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target')) || 0;
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 40));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              counter.textContent = target;
+              clearInterval(timer);
+            } else {
+              counter.textContent = current;
+            }
+          }, 35);
+        });
+
+        counterDecimals.forEach(counter => {
+          const target = parseFloat(counter.getAttribute('data-target')) || 0;
+          let current = 0;
+          const timer = setInterval(() => {
+            current += 2.5;
+            if (current >= target) {
+              counter.textContent = target.toFixed(1);
+              clearInterval(timer);
+            } else {
+              counter.textContent = current.toFixed(1);
+            }
+          }, 40);
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(statsSection);
+}
 
 
 
