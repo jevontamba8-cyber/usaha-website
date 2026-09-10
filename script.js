@@ -161,7 +161,7 @@ window.calculatePrice = function() {
     if (val === 100000) {
       includedPagesHint.textContent = "Paket Undangan Digital sudah mencakup 1 Halaman bawaan.";
     } else if (val === 500000) {
-      includedPagesHint.textContent = "Paket Portofolio sudah mencakup 3 Halaman bawaan.";
+      includedPagesHint.textContent = "Paket Portofolio sudah mencakup 1-2 Halaman sederhana bawaan.";
     } else if (val === 3000000) {
       includedPagesHint.textContent = "Paket Starter sudah mencakup 5 Halaman bawaan.";
     } else if (val === 5000000) {
