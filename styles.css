@@ -40,6 +40,38 @@
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Dark Theme Variables */
+[data-theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"] {
+  --bg-main: #0F0D0B;
+  --bg-card: #1A1512;
+  --bg-dark: #080605;
+  --bg-dark-card: #14100D;
+  
+  --primary-dark: #FBF6EE;
+  --primary-brown: #E8D7C7;
+  --primary-light: #C4A285;
+  
+  --accent-amber: #F59E0B;
+  --accent-amber-hover: #D97706;
+  --accent-amber-light: rgba(245, 158, 11, 0.16);
+  --accent-gold: #FCD34D;
+  
+  --text-dark: #F5EEE6;
+  --text-muted: #A39387;
+  --text-light: #FBF8F4;
+  --text-light-muted: #CBD5E1;
+  
+  --border-light: rgba(245, 158, 11, 0.15);
+  --border-glow: rgba(245, 158, 11, 0.45);
+  
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.35);
+}
+
 /* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -61,6 +93,7 @@ body {
   background-color: var(--bg-main);
   color: var(--text-dark);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -2531,6 +2564,218 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes borderGlow {
   0% { border-color: var(--accent-amber); box-shadow: 0 0 20px rgba(217, 119, 36, 0.2); }
   100% { border-color: var(--accent-gold); box-shadow: 0 0 35px rgba(244, 162, 97, 0.35); }
+}
+
+/* =================================================== */
+/* THEME TOGGLE BUTTON */
+/* =================================================== */
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--accent-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(20deg) scale(1.08);
+  border-color: var(--accent-amber);
+  box-shadow: var(--shadow-glow);
+}
+
+/* =================================================== */
+/* TECH STACK SECTION STYLES */
+/* =================================================== */
+.tech-stack-section {
+  background: rgba(217, 119, 36, 0.02);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-md);
+}
+
+.tech-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.tech-card:hover .tech-icon-box {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.tech-info h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: var(--primary-dark);
+}
+
+.tech-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* =================================================== */
+/* DARK THEME SPECIFIC OVERRIDES */
+/* =================================================== */
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(15, 13, 11, 0.95);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="dark"] .hero-bg-accent {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(15, 13, 11, 0) 70%);
+}
+
+[data-theme="dark"] .price-pill {
+  background: #1A1512;
+  border-color: var(--border-glow);
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] #portofolio {
+  background: rgba(22, 18, 14, 0.5) !important;
+}
+
+[data-theme="dark"] .portfolio-img-box {
+  background: #14100D;
+}
+
+[data-theme="dark"] .pricing-table-card {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .pricing-table thead th {
+  background: #1E1915;
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .pricing-table th,
+[data-theme="dark"] .pricing-table td {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .section-divider-row td {
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: var(--accent-gold) !important;
+}
+
+[data-theme="dark"] #penjelasan-fitur {
+  background: #15110E !important;
+  border-top-color: rgba(245, 158, 11, 0.15) !important;
+}
+
+[data-theme="dark"] .explanation-card {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] #alur-kerja {
+  background: rgba(245, 158, 11, 0.03) !important;
+  border-top-color: rgba(245, 158, 11, 0.15) !important;
+}
+
+[data-theme="dark"] .calc-select,
+[data-theme="dark"] .calc-input,
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: #13100D;
+  color: #F5EEE6;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+[data-theme="dark"] .calc-hint {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .calculator-box {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .faq-question {
+  background: var(--bg-card);
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .faq-answer {
+  background: #15110E;
+}
+
+[data-theme="dark"] .demo-modal-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+}
+
+[data-theme="dark"] .wa-dropdown-menu {
+  background: var(--bg-card);
+  border-color: var(--border-glow);
+}
+
+[data-theme="dark"] .wa-dropdown-item {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .wa-dropdown-item:hover {
+  background: var(--accent-amber-light);
+}
+
+[data-theme="dark"] .contact-number {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .tech-stack-section {
+  background: rgba(245, 158, 11, 0.03);
+  border-top-color: var(--border-light);
+  border-bottom-color: var(--border-light);
+}
+
+[data-theme="dark"] .hamburger {
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .nav-link {
+  color: var(--text-dark);
 }
 
 

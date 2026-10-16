@@ -82,12 +82,16 @@
       <nav class="nav-menu" id="navMenu">
         <a href="#beranda" class="nav-link active">Beranda</a>
         <a href="#layanan" class="nav-link">Layanan</a>
+        <a href="#teknologi" class="nav-link">Teknologi</a>
         <a href="#portofolio" class="nav-link">Portofolio</a>
         <a href="#harga" class="nav-link">Estimasi Biaya</a>
         <a href="#kontak" class="nav-link">Hubungi Kami</a>
       </nav>
 
       <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" aria-label="Ganti Tema Gelap/Terang" title="Ganti Mode Gelap">
+          <i class="fa-solid fa-moon"></i>
+        </button>
         <button class="btn btn-primary" onclick="openWaSelector()">
           <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
         </button>
@@ -254,6 +258,99 @@
           <div class="guarantee-icon"><i class="fa-solid fa-headset"></i></div>
           <h3>Free Pendampingan & Support</h3>
           <p>Tim support kami siap membantu pertanyaan teknis & panduan pengelolaan konten kapan pun Anda butuhkan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Tech Stack & Standar Mutu Pembuatan Website -->
+  <section class="section-padding tech-stack-section" id="teknologi">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-tag"><i class="fa-solid fa-microchip"></i> Teknologi & Standar Mutu</div>
+        <h2 class="section-title">Teknologi Modern yang Kami Gunakan</h2>
+        <p class="section-subtitle">Kami membangun setiap website dengan standar kode bersih (*clean code*), arsitektur modern, dan infrastruktur cloud berkecepatan tinggi:</p>
+      </div>
+
+      <div class="tech-grid reveal">
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #E34F26; background: rgba(227, 79, 38, 0.1);">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="tech-info">
+            <h4>HTML5 & Semantic Markup</h4>
+            <p>Struktur semantik standar internasional yang rapi, ramah mesin pencari, dan aksesibel di semua platform.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #1572B6; background: rgba(21, 114, 182, 0.1);">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <div class="tech-info">
+            <h4>CSS3 & Modern Flex/Grid</h4>
+            <p>Desain visual responsif, transisi micro-animations halus, dan tata letak presisi di semua layar.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #D97706; background: rgba(245, 158, 11, 0.1);">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          <div class="tech-info">
+            <h4>Modern JavaScript (ES6+)</h4>
+            <p>Interaktivitas cerdas, kalkulator biaya otomatis, modal instan, dan performa tinggi tanpa jeda.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #777BB4; background: rgba(119, 123, 180, 0.1);">
+            <i class="fa-brands fa-php"></i>
+          </div>
+          <div class="tech-info">
+            <h4>PHP & Backend Engine</h4>
+            <p>Logika backend yang stabil untuk form order, pemrosesan server dinamis, dan aplikasi web custom.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #0284C7; background: rgba(2, 132, 199, 0.1);">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <div class="tech-info">
+            <h4>High-Speed Cloud SSD</h4>
+            <p>Hosting cloud berbasis SSD NVMe dengan garansi uptime 99.9% dan proteksi server aktif non-stop.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #16A34A; background: rgba(22, 163, 74, 0.1);">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <div class="tech-info">
+            <h4>SSL Certificate (HTTPS)</h4>
+            <p>Enkripsi proteksi data transaksi tingkat tinggi berstandar bank untuk menjaga rasa aman pengunjung.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #EA4335; background: rgba(234, 67, 53, 0.1);">
+            <i class="fa-brands fa-google"></i>
+          </div>
+          <div class="tech-info">
+            <h4>SEO & Google Analytics</h4>
+            <p>Struktur meta tags dan sitemap XML siap terindeks di mesin pencari Google secara optimal.</p>
+          </div>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon-box" style="color: #25D366; background: rgba(37, 211, 102, 0.1);">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="tech-info">
+            <h4>Direct WhatsApp API</h4>
+            <p>Integrasi tombol konsultasi langsung & form pemesanan instan ke nomor WhatsApp tim usaha Anda.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -502,7 +599,7 @@
         <!-- Project 8: Undangan Wedding Digital Sample -->
         <div class="portfolio-card" data-category="undangan">
           <div class="portfolio-img-box">
-            <img src="assets/portfolio-landing.jpg" alt="Undangan Wedding Digital Sample" loading="lazy">
+            <img src="assets/portfolio-undangan.jpg" alt="Undangan Wedding Digital Sample" loading="lazy">
             <div class="portfolio-logo-badge" style="background: rgba(194, 24, 91, 0.85);">
               <i class="fa-solid fa-heart"></i> Wedding & Event Badge
             </div>
@@ -521,7 +618,7 @@
               <a href="https://peachpuff-whale-801170.hostingersite.com/undangan.html" target="_blank" class="btn btn-secondary">
                 Buka Website Live <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
-              <button class="btn btn-outline-demo" onclick="openDemoModal('Undangan Wedding Digital Modern', 'Undangan Digital (Rp 100.000)', 'assets/portfolio-landing.jpg', 'Website undangan pernikahan digital interaktif dengan audio musik backsound, galeri foto, peta Google Maps, RSVP, dan amplop digital.', 'https://peachpuff-whale-801170.hostingersite.com/undangan.html')">
+              <button class="btn btn-outline-demo" onclick="openDemoModal('Undangan Wedding Digital Modern', 'Undangan Digital (Rp 100.000)', 'assets/portfolio-undangan.jpg', 'Website undangan pernikahan digital interaktif dengan audio musik backsound, galeri foto, peta Google Maps, RSVP, dan amplop digital.', 'https://peachpuff-whale-801170.hostingersite.com/undangan.html')">
                 <i class="fa-solid fa-eye"></i> Quick Preview
               </button>
             </div>
@@ -925,7 +1022,7 @@
             <label for="calcType"><strong>1. Jenis Paket Website:</strong></label>
             <select id="calcType" onchange="calculatePrice()" class="calc-select">
               <option value="100000">UNDANGAN DIGITAL — Rp 100.000 (Sudah Termasuk 1 Halaman)</option>
-              <option value="500000">PORTOFOLIO — Rp 500.000 (Sudah Termasuk 3 Halaman)</option>
+              <option value="500000">PORTOFOLIO — Rp 500.000 (Sudah Termasuk 1-2 Halaman)</option>
               <option value="3000000">STARTER — Rp 3.000.000 / Tahun (Sudah Termasuk 5 Halaman)</option>
               <option value="5000000" selected>BUSINESS — Rp 5.000.000 / Tahun ⭐ (Sudah Termasuk 10 Halaman)</option>
               <option value="10000000">PROFESSIONAL — Rp 10.000.000 / Tahun (Sudah Termasuk 20 Halaman)</option>
@@ -1295,7 +1392,7 @@
     <div class="wa-dropdown-header">
       <i class="fa-brands fa-whatsapp"></i> Pilih Tim Konsultasi:
     </div>
-    <a href="https://wa.me/6281285324814?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
+    <a href="https://wa.me/6281316098209?text=Halo%20kak%20Amoz,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">
       <i class="fa-solid fa-user"></i> <strong>Amoz</strong> (+62 813-1609-8209)
     </a>
     <a href="https://wa.me/6285782228570?text=Halo%20kak,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" class="wa-dropdown-item">

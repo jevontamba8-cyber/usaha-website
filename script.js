@@ -1,10 +1,49 @@
 // BRWNWEB Script
 
+// Initialize theme immediately before DOM rendering to prevent flashing
+(function() {
+  const savedTheme = localStorage.getItem('brwnweb-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initNavbar();
   initScrollReveal();
   initCounters();
 });
+
+// Dark / Light Theme Switcher
+function initTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (document.body) document.body.setAttribute('data-theme', currentTheme);
+  updateThemeIcon(currentTheme);
+}
+
+window.toggleTheme = function() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  if (document.body) document.body.setAttribute('data-theme', newTheme);
+  localStorage.setItem('brwnweb-theme', newTheme);
+  updateThemeIcon(newTheme);
+};
+
+function updateThemeIcon(theme) {
+  const btn = document.getElementById('themeToggleBtn');
+  if (btn) {
+    if (theme === 'dark') {
+      btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      btn.setAttribute('title', 'Ganti ke Tema Terang');
+      btn.setAttribute('aria-label', 'Ganti ke Tema Terang');
+    } else {
+      btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      btn.setAttribute('title', 'Ganti ke Tema Gelap');
+      btn.setAttribute('aria-label', 'Ganti ke Tema Gelap');
+    }
+  }
+}
 
 // Navbar Scroll & Mobile Drawer
 function initNavbar() {
