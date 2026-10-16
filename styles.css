@@ -1047,6 +1047,71 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 4px;
 }
 
+.portfolio-card.featured-new {
+  border: 2px solid var(--accent-amber);
+  position: relative;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.12);
+}
+
+.portfolio-card.featured-new:hover {
+  box-shadow: 0 12px 30px rgba(217, 119, 6, 0.22);
+  transform: translateY(-5px);
+}
+
+.portfolio-badge-new {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #EA580C 0%, #D97706 100%);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  animation: badgePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.45);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px rgba(234, 88, 12, 0.7);
+  }
+}
+
+.portfolio-client-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-top: -4px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.portfolio-client-name i {
+  color: var(--accent-amber);
+}
+
+@media (max-width: 480px) {
+  .portfolio-badge-new,
+  .portfolio-logo-badge {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+}
+
 /* =================================================== */
 /* PRICING CARDS & COMPARISON TABLE STYLES */
 /* =================================================== */
